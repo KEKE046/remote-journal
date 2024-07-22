@@ -18,7 +18,7 @@ crt_save=/etc/certs/$domain.journal.crt
 key_save=/etc/certs/$domain.journal.key
 ca_save=/etc/certs/$domain.ca.crt
 
-cat > certs/$domain.setup.sh <<E_O_F
+cat > certs/$domain.setup.sh <<_EOF
 #!/bin/bash
 mkdir -p /etc/certs
 cat > $crt_save <<EOF
@@ -43,4 +43,4 @@ sed -i.bak \\
     -e 's#TrustedCertificateFile=.*#TrustedCertificateFile=/etc/certs/$domain.ca.crt#g' \\
     /etc/systemd/journal-remote.conf
 
-E_O_F
+_EOF
