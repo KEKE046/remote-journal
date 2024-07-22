@@ -6,12 +6,6 @@ if [ -z "$domain" ]; then
     exit 1
 fi
 
-
-if [ -z "$domain" ]; then
-    echo "Usage: $0 <domain>"
-    exit 1
-fi
-
 openssl req -newkey rsa:2048 -nodes -out temp/$domain.csr -keyout certs/$domain.key -subj "/CN=$domain/"
 openssl ca -batch -config ca.conf -notext -in temp/$domain.csr -out certs/$domain.pem
 rm ca/index && touch ca/index
