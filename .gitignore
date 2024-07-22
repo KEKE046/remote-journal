@@ -1,4 +1,7 @@
-ca/*
-certs/*
-temp/*
+/ca/*
+/certs/*
+/temp/*
+!/ca/.gitkeep
+!/certs/.gitkeep
+!/temp/.gitkeep
 ca.conf
